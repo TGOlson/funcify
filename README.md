@@ -6,7 +6,7 @@ Convert Object-Oriented style functions to a pure functional style.
 o.fn(v)
 
 var fn = funcify('fn');
-// => fn(v, o) [curried]
+// => fn(v)(o)
 ```
 ## Specs
 
