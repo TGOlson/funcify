@@ -8,6 +8,13 @@ o.fn(v)
 var fn = funcify('fn');
 // => fn(v, o) [curried]
 ```
+## Specs
+
+Run the specs
+
+```
+$ jasmine-node spec/
+```
 
 ## Usage
 
@@ -21,24 +28,27 @@ var map = funcify('map');
 var concat = funcify.concat
 ```
 
-Check out the docs (coming soon) for more examples.
+Funcify an arbitrary method
 
-## Specs
+```js
+var map = funcify('map');
 
-Run the specs
+var add1 = function(v) {
+  return v + 1;
+};
 
+var add1ToEach = map(add1);
+
+add1ToEach([1, 2, 3, 4]);
+// => [ 2, 3, 4, 5 ]
 ```
-$ jasmine-node spec/
-```
-
-## Examples
 
 Use a method from the library
 
 ```js
 var concat = funcify.concat;
 
-toTheLimit = concat(' to the limit!');
+var toTheLimit = concat(' to the limit!');
 
 toTheLimit('Push it');
 // => Push it to the limit!
@@ -49,27 +59,32 @@ Globally expose the library
 ```js
 funcify.expose(global);
 
-add1ToAll = map(add1);
+var toTheLimit = concat(' to the limit!');
 
-add1ToAll([1, 2, 3, 4]);
-// => [ 2, 3, 4, 5 ]
+toTheLimit('Push it');
+// => Push it to the limit!
 ```
 
-Funcify a method
+Funcify a more complex method
 
 ```js
 var then = funcify('then');
 
-function log(v) {
-  console.log(v);
-  return v;
+function getAsynch(v) {
+  return Q.Promise(function(resolve, reject) {
+    setTimeout(resolve.bind(null, v), 500);
+  });
 }
 
-var getAndAdd1 = compose(then(log), then(add1ToAll), getAsynch);
+function log(v) {
+  console.log(v);
+}
 
-getAsynchAndAdd1([1, 2, 3, 4]);
+var getAsynchAndLog = compose(then(log), getAsynch);
+
+getAsynchAndLog([1, 2, 3, 4]);
 // wait 500ms
-// => [ 2, 3, 4, 5 ]
+// => [ 1, 2, 3, 4 ]
 ```
 
 ## TODO
