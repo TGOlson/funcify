@@ -9,6 +9,28 @@ var fn = funcify('fn');
 // => fn(v, o) [curried]
 ```
 
+## Usage
+
+```js
+var funcify = require('funcify');
+
+// funcify a function by name
+var map = funcify('map');
+
+// use a function from the library
+var concat = funcify.concat
+```
+
+Check out the docs (coming soon) for more examples.
+
+## Specs
+
+Run the specs
+
+```
+$ jasmine-node spec/
+```
+
 ## Examples
 
 Use a method from the library
