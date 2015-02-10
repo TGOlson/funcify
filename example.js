@@ -2,7 +2,7 @@ var Q = require('q'),
     curry = require('lodash').curry,
     compose = require('lodash').compose;
 
-var funcify = require('./funcify');
+var funcify = require('./lib/funcify');
 
 /*
  * Test setup
