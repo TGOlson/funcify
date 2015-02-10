@@ -1,0 +1,25 @@
+{
+  "name": "funcify",
+  "version": "0.0.0",
+  "description": "* funcify",
+  "main": "funcify.js",
+  "dependencies": {
+    "q": "~1.1.2",
+    "ramda": "~0.9.1",
+    "lodash": "^3.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TGOlson/funcify.git"
+  },
+  "author": "Tyler Olson <tydotg@gmail.com> (http://tgolson.com/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TGOlson/funcify/issues"
+  },
+  "homepage": "https://github.com/TGOlson/funcify"
+}
