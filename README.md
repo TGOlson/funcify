@@ -1,4 +1,4 @@
-* funcify
+# funcify
 
 Convert Object-Oriented style functions to a pure functional style.
 
@@ -9,7 +9,7 @@ var fn = funcify('fn');
 // => fn(v, o) [curried]
 ```
 
-** Examples
+## Examples
 
 Use a method from the library
 
@@ -50,7 +50,7 @@ getAsynchAndAdd1([1, 2, 3, 4]);
 // => [ 2, 3, 4, 5 ]
 ```
 
-** TODO
+## TODO
 
 * Add specs
 * Clean up `expose` functions
